@@ -67,6 +67,9 @@ CREATE TABLE funcionario (
 
 INSERT INTO pagamento (valor_aluguel, tipo_pagamento)
 VALUES ('700.00','Cartão');
+INSERT INTO cliente (cpf,nome, data_nascimento, telefone,email ,cep ,cidade ,bairro,rua ,numero, senha  )
+VALUES ('774.589.123-12','Atena da silva', '1988-01-03', '+551191234-6798', 'paulinho12@gmail.com', '12345-678', 'Barueri', 'Limoeiro', 'Rua chaves', '34','Lulu@123' );
+
 
 
 
