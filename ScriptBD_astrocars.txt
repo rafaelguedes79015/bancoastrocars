@@ -35,8 +35,8 @@ CREATE TABLE carro (
 
 CREATE TABLE aluguel (
     id_aluguel integer AUTO_INCREMENT PRIMARY KEY,
-    dt_retiro VARCHAR(50) NOT NULL,
-	dt_entrega VARCHAR(50) NOT NULL,
+    dt_retiro date NOT NULL,
+	dt_entrega date NOT NULL,
 	id_cliente integer, 
 	id_pagamento integer,
 	id_carro integer,
@@ -58,6 +58,7 @@ CREATE TABLE funcionario (
 	bairro VARCHAR(100) NOT NULL,
 	rua VARCHAR(50) NOT NULL,
 	numero VARCHAR(10) NOT NULL,
+    senha VARCHAR(50) NOT NULL,
 	id_aluguel integer,
 	CONSTRAINT fk_AluguelFuncionario FOREIGN KEY (id_aluguel) REFERENCES aluguel (id_aluguel)
 );
@@ -69,6 +70,13 @@ INSERT INTO pagamento (valor_aluguel, tipo_pagamento)
 VALUES ('700.00','Cartão');
 INSERT INTO cliente (cpf,nome, data_nascimento, telefone,email ,cep ,cidade ,bairro,rua ,numero, senha  )
 VALUES ('774.589.123-12','Atena da silva', '1988-01-03', '+551191234-6798', 'paulinho12@gmail.com', '12345-678', 'Barueri', 'Limoeiro', 'Rua chaves', '34','Lulu@123' );
+INSERT INTO carro (placa, modelo, ano_carro)
+VALUES ('abc123','sport', '2019');
+INSERT INTO aluguel (dt_retiro, dt_entrega,id_cliente, id_pagamento, id_carro)
+VALUES ('2022-09-12','2022-12-05', 1, 2, 3);
+INSERT INTO funcionario (cpf,nome, data_nascimento, telefone,email ,cep ,cidade ,bairro,rua ,numero, senha, id_aluguel)
+VALUES ('774.589.123-12','Atena da silva', '1988-01-03', '+551191234-6798', 'paulinho12@gmail.com', '12345-678', 'Barueri', 'Limoeiro', 'Rua chaves', '34','Lulu@123', 1 );
+
 
 
 
